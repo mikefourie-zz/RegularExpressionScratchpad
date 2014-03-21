@@ -1,0 +1,170 @@
+<RegularExpressionLibrary xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Library libraryname="CleanHTML">
+		<task name="Remove Fonts" description="">
+			<action name="font" description="" supportsRecursion="false">
+				<pattern><![CDATA[<font[/="#\w\s]*>]]></pattern>
+				<replacement><![CDATA[]]></replacement>
+			</action>
+			<action name="/font" description="" supportsRecursion="false">
+				<pattern><![CDATA[</font>]]></pattern>
+				<replacement><![CDATA[]]></replacement>
+			</action>
+		</task>
+		<task name="Clean TD" description="">
+			<action name="font" description="" supportsRecursion="false">
+				<pattern><![CDATA[<td[/="%#\w\s]*>]]></pattern>
+				<replacement><![CDATA[<td>]]></replacement>
+			</action>
+		</task>
+		<task name="Clean Body" description="">
+			<action name="body" description="" supportsRecursion="false">
+				<pattern><![CDATA[<body[/="%#\w\s]*>]]></pattern>
+				<replacement><![CDATA[<body>]]></replacement>
+			</action>
+		</task>
+		<task name="Clean Table" description="">
+			<action name="font" description="" supportsRecursion="false">
+				<pattern><![CDATA[<table[/="%#\w\s]*>]]></pattern>
+				<replacement><![CDATA[<table>]]></replacement>
+			</action>
+		</task>
+		<task name="Clean nb space" description="">
+			<action name="nb space" description="" supportsRecursion="false">
+				<pattern><![CDATA[&nbsp;]]></pattern>
+				<replacement><![CDATA[]]></replacement>
+			</action>
+		</task>
+		<task name="Clean ' &lt;'" description="">
+			<action name="less than" description="" supportsRecursion="true">
+				<pattern><![CDATA[ <]]></pattern>
+				<replacement><![CDATA[<]]></replacement>
+			</action>
+			<action name="greater than" description="" supportsRecursion="true">
+				<pattern><![CDATA[> ]]></pattern>
+				<replacement><![CDATA[>]]></replacement>
+			</action>
+			<action name="greater than" description="" supportsRecursion="true">
+				<pattern><![CDATA[ >]]></pattern>
+				<replacement><![CDATA[>]]></replacement>
+			</action>
+		</task>
+		<task name="Remove Div" description="">
+			<action name="div" description="" supportsRecursion="false">
+				<pattern><![CDATA[<div[/="%#\w\s]*>]]></pattern>
+				<replacement><![CDATA[]]></replacement>
+			</action>
+			<action name="/div" description="" supportsRecursion="false">
+				<pattern><![CDATA[</div>]]></pattern>
+				<replacement><![CDATA[]]></replacement>
+			</action>
+		</task>
+		<task name="Remove P" description="">
+			<action name="p" description="" supportsRecursion="false">
+				<pattern><![CDATA[<p[/=:;"%#\w\s]*>]]></pattern>
+				<replacement><![CDATA[]]></replacement>
+			</action>
+			<action name="/p" description="" supportsRecursion="false">
+				<pattern><![CDATA[</p>]]></pattern>
+				<replacement><![CDATA[]]></replacement>
+			</action>
+		</task>
+		<task name="Remove B" description="">
+			<action name="b" description="" supportsRecursion="false">
+				<pattern><![CDATA[<b>]]></pattern>
+				<replacement><![CDATA[]]></replacement>
+			</action>
+			<action name="/b" description="" supportsRecursion="false">
+				<pattern><![CDATA[</b>]]></pattern>
+				<replacement><![CDATA[]]></replacement>
+			</action>
+		</task>
+		<task name="Remove Strong" description="">
+			<action name="strong" description="" supportsRecursion="false">
+				<pattern><![CDATA[<strong>]]></pattern>
+				<replacement><![CDATA[]]></replacement>
+			</action>
+			<action name="/strong" description="" supportsRecursion="false">
+				<pattern><![CDATA[</strong>]]></pattern>
+				<replacement><![CDATA[]]></replacement>
+			</action>
+		</task>
+		<task name="Remove Small" description="">
+			<action name="small" description="" supportsRecursion="false">
+				<pattern><![CDATA[<small>]]></pattern>
+				<replacement><![CDATA[]]></replacement>
+			</action>
+			<action name="/small" description="" supportsRecursion="false">
+				<pattern><![CDATA[</small>]]></pattern>
+				<replacement><![CDATA[]]></replacement>
+			</action>
+		</task>
+		<task name="Remove BR" description="">
+			<action name="br" description="" supportsRecursion="false">
+				<pattern><![CDATA[<br>]]></pattern>
+				<replacement><![CDATA[]]></replacement>
+			</action>
+		</task>
+		<task name="Remove HR" description="">
+			<action name="hr" description="" supportsRecursion="false">
+				<pattern><![CDATA[<hr>]]></pattern>
+				<replacement><![CDATA[]]></replacement>
+			</action>
+		</task>
+		<task name="Remove Webbot" description="">
+			<action name="webbot" description="" supportsRecursion="false">
+				<pattern><![CDATA[<!--webbot[/./="%#\w\s/-]*>]]></pattern>
+				<replacement><![CDATA[]]></replacement>
+			</action>
+		</task>
+		<task name="Remove Meta" description="">
+			<action name="meta" description="" supportsRecursion="false">
+				<pattern><![CDATA[<meta[/./=;:",%#\w\s/-]*>]]></pattern>
+				<replacement><![CDATA[]]></replacement>
+			</action>
+		</task>
+		<task name="Remove Center" description="">
+			<action name="center" description="" supportsRecursion="false">
+				<pattern><![CDATA[<center>]]></pattern>
+				<replacement><![CDATA[]]></replacement>
+			</action>
+			<action name="/center" description="" supportsRecursion="false">
+				<pattern><![CDATA[</center>]]></pattern>
+				<replacement><![CDATA[]]></replacement>
+			</action>
+		</task>
+		<task name="Remove Double Spaces" description="">
+			<action name="double spaces" description="" supportsRecursion="true">
+				<pattern><![CDATA[  ]]></pattern>
+				<replacement><![CDATA[ ]]></replacement>
+			</action>
+		</task>
+		<task name="Remove Line Feeds" description="">
+			<action name="line feeds" description="" supportsRecursion="true">
+				<pattern><![CDATA[\n]]></pattern>
+				<replacement><![CDATA[]]></replacement>
+			</action>
+			<action name="line feeds" description="" supportsRecursion="true">
+				<pattern><![CDATA[\r]]></pattern>
+				<replacement><![CDATA[]]></replacement>
+			</action>
+		</task>
+		<task name="Remove Height" description="">
+			<action name="remove height" description="" supportsRecursion="false">
+				<pattern><![CDATA[height[="%\d]*]]></pattern>
+				<replacement><![CDATA[]]></replacement>
+			</action>
+		</task>
+		<task name="Remove Width" description="">
+			<action name="remove width" description="" supportsRecursion="false">
+				<pattern><![CDATA[width[="%\d]*]]></pattern>
+				<replacement><![CDATA[]]></replacement>
+			</action>
+		</task>
+		<task name="Remove Border" description="">
+			<action name="remove border" description="" supportsRecursion="false">
+				<pattern><![CDATA[border[="%\d]*]]></pattern>
+				<replacement><![CDATA[]]></replacement>
+			</action>
+		</task>
+	</Library>
+</RegularExpressionLibrary>
