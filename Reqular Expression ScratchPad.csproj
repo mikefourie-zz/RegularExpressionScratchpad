@@ -82,10 +82,11 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>C106D57FAF04B75CC7CD90486E8B9155CDA4BCF5</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>338B997715D6AC9DDA489EBAC0660369E518A2AF</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>Reqular Expression ScratchPad_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
