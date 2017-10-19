@@ -11,10 +11,6 @@ namespace RegularExpressionScratchpad
     {
         private readonly ArrayList expressionLookup = new ArrayList();
         private readonly string expression;
-        private int offset;
-        private int errorLocation = -1;
-        private int errorLength = -1;
-        private RegexOptions regexOptions;
         private bool inseries;
 
         /// <summary>
@@ -34,12 +30,12 @@ namespace RegularExpressionScratchpad
         {
             get
             {
-                if (this.offset >= this.expression.Length)
+                if (this.Offset >= this.expression.Length)
                 {
                     throw new Exception("Interpretation not possible");
                 }
 
-                return this.expression[this.offset];
+                return this.expression[this.Offset];
             }
         }
 
@@ -47,93 +43,37 @@ namespace RegularExpressionScratchpad
         /// Gets a value indicating whether [at end].
         /// </summary>
         /// <value><c>true</c> if [at end]; otherwise, <c>false</c>.</value>
-        public bool AtEnd
-        {
-            get
-            {
-                return this.offset >= this.expression.Length;
-            }
-        }
+        public bool AtEnd => this.Offset >= this.expression.Length;
 
         /// <summary>
         /// Gets or sets the offset.
         /// </summary>
         /// <value>The offset.</value>
-        public int Offset
-        {
-            get
-            {
-                return this.offset;
-            }
-
-            set
-            {
-                this.offset = value;
-            }
-        }
+        public int Offset { get; set; }
 
         /// <summary>
         /// Gets the string.
         /// </summary>
         /// <value>The string.</value>
-        public string String
-        {
-            get
-            {
-                return this.expression.Substring(this.offset);
-            }
-        }
+        public string String => this.expression.Substring(this.Offset);
 
         /// <summary>
         /// Gets or sets the error location.
         /// </summary>
         /// <value>The error location.</value>
-        public int ErrorLocation
-        {
-            get
-            {
-                return this.errorLocation;
-            }
-
-            set
-            {
-                this.errorLocation = value;
-            }
-        }
+        public int ErrorLocation { get; set; } = -1;
 
         /// <summary>
         /// Gets or sets the length of the error.
         /// </summary>
         /// <value>The length of the error.</value>
-        public int ErrorLength
-        {
-            get
-            {
-                return this.errorLength;
-            }
-
-            set
-            {
-                this.errorLength = value;
-            }
-        }
+        public int ErrorLength { get; set; } = -1;
 
         /// <summary>
         /// Gets or sets the regex options.
         /// </summary>
         /// <value>The regex options.</value>
-        public RegexOptions RegexOptions
-        {
-            get
-            {
-                return this.regexOptions;
-            }
-
-            set
-            {
-                this.regexOptions = value;
-            }
-        }
+        public RegexOptions RegexOptions { get; set; }
 
         /// <summary>
         /// Gets a value indicating whether [ignore pattern whitespace].
@@ -141,25 +81,13 @@ namespace RegularExpressionScratchpad
         /// <value>
         ///     <c>true</c> if [ignore pattern whitespace]; otherwise, <c>false</c>.
         /// </value>
-        public bool IgnorePatternWhitespace
-        {
-            get
-            {
-                return (this.regexOptions & RegexOptions.IgnorePatternWhitespace) != 0;
-            }
-        }
+        public bool IgnorePatternWhitespace => (this.RegexOptions & RegexOptions.IgnorePatternWhitespace) != 0;
 
         /// <summary>
         /// Gets a value indicating whether [explicit capture].
         /// </summary>
         /// <value><c>true</c> if [explicit capture]; otherwise, <c>false</c>.</value>
-        public bool ExplicitCapture
-        {
-            get
-            {
-                return (this.regexOptions & RegexOptions.ExplicitCapture) != 0;
-            }
-        }
+        public bool ExplicitCapture => (this.RegexOptions & RegexOptions.ExplicitCapture) != 0;
 
         /// <summary>
         /// Substrings the specified start.
@@ -177,7 +105,7 @@ namespace RegularExpressionScratchpad
         /// </summary>
         public void MoveNext()
         {
-            this.offset++;
+            this.Offset++;
         }
 
         /// <summary>
@@ -210,7 +138,7 @@ namespace RegularExpressionScratchpad
         {
             if (item == null)
             {
-                throw new ArgumentNullException("item", "RegexItem is null");
+                throw new ArgumentNullException(nameof(item), "RegexItem is null");
             }
 
             if (this.inseries)

@@ -20,7 +20,7 @@ namespace RegularExpressionScratchpad
         {
             if (buffer == null)
             {
-                throw new ArgumentNullException("buffer", "RegexBuffer is null");
+                throw new ArgumentNullException(nameof(buffer), "RegexBuffer is null");
             }
 
             this.startLocation = buffer.Offset;
@@ -81,12 +81,12 @@ namespace RegularExpressionScratchpad
                 // no closing brace. Set highlight for this capture...
                 buffer.ErrorLocation = this.startLocation;
                 buffer.ErrorLength = 1;
-                throw new Exception(string.Format("Missing closing ')' in capture"), e);
+                throw new Exception("Missing closing \')\' in capture", e);
             }
 
             if (current != ')')
             {
-                throw new Exception(string.Format("Unterminated closure at offset {0}", buffer.Offset));
+                throw new Exception($"Unterminated closure at offset {buffer.Offset}");
             }
 
             // eat closing parenthesis

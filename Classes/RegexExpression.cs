@@ -24,13 +24,7 @@ namespace RegularExpressionScratchpad
         /// Gets the items.
         /// </summary>
         /// <value>The items.</value>
-        public ArrayList Items
-        {
-            get
-            {
-                return this.items;
-            }
-        }
+        public ArrayList Items => this.items;
 
         /// <summary>
         /// Override ToString()
@@ -44,8 +38,7 @@ namespace RegularExpressionScratchpad
 
             foreach (RegexItem item in this.items)
             {
-                RegexCharacter regexChar = item as RegexCharacter;
-                if (regexChar != null && !regexChar.Special)
+                if (item is RegexCharacter regexChar && !regexChar.Special)
                 {
                     bufChar.Append(regexChar.ToString(indent));
                 }

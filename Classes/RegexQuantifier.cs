@@ -18,7 +18,7 @@ namespace RegularExpressionScratchpad
         {
             if (buffer == null)
             {
-                throw new ArgumentNullException("buffer", "RegexBuffer is null");
+                throw new ArgumentNullException(nameof(buffer), "RegexBuffer is null");
             }
 
             int startLoc = buffer.Offset;
@@ -31,15 +31,15 @@ namespace RegularExpressionScratchpad
             {
                 if (match.Groups["m"].Length != 0)
                 {
-                    this.description = string.Format("At least {0}, but not more than {1} times", match.Groups["n"], match.Groups["m"]);
+                    this.description = $"At least {match.Groups["n"]}, but not more than {match.Groups["m"]} times";
                 }
                 else if (match.Groups["Comma"].Length != 0)
                 {
-                    this.description = string.Format("At least {0} times", match.Groups["n"]);
+                    this.description = $"At least {match.Groups["n"]} times";
                 }
                 else
                 {
-                    this.description = string.Format("Exactly {0} times", match.Groups["n"]);
+                    this.description = $"Exactly {match.Groups["n"]} times";
                 }
 
                 buffer.Offset += match.Groups[0].Length;

@@ -20,7 +20,7 @@ namespace RegularExpressionScratchpad
         {
             if (regexItem == null)
             {
-                throw new ArgumentNullException("regexItem", "RegexItem is null");
+                throw new ArgumentNullException(nameof(regexItem), "RegexItem is null");
             }
 
             this.StringValue = regexItem.ToString(0);
@@ -38,25 +38,13 @@ namespace RegularExpressionScratchpad
         /// Gets the start.
         /// </summary>
         /// <value>The start.</value>
-        public int Start
-        {
-            get
-            {
-                return this.start;
-            }
-        }
+        public int Start => this.start;
 
         /// <summary>
         /// Gets the end.
         /// </summary>
         /// <value>The end.</value>
-        public int End
-        {
-            get
-            {
-                return this.end;
-            }
-        }
+        public int End => this.end;
 
         /// <summary>
         /// Gets or sets the length.
@@ -64,15 +52,9 @@ namespace RegularExpressionScratchpad
         /// <value>The length.</value>
         public int Length
         {
-            get
-            {
-                return this.end - this.start + 1;
-            }
+            get => this.end - this.start + 1;
 
-            set
-            {
-                this.end = this.start + value - 1;
-            }
+            set => this.end = this.start + value - 1;
         }
 
         /// <summary>

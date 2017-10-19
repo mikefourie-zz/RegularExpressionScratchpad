@@ -19,31 +19,33 @@ namespace RegularExpressionScratchpad
         /// </summary>
         static RegexCharacter()
         {
-            Escaped = new Hashtable();
+            Escaped = new Hashtable
+            {
+                { 'a', @"A bell (alarm) \u0007 " },
+                { 'b', @"Word boundary between //w and //W" },
+                { 'B', @"Not at a word boundary between //w and //W" },
+                { 't', @"A tab \u0009 " },
+                { 'r', @"A carriage return \u000D " },
+                { 'v', @"A vertical tab \u000B " },
+                { 'f', @"A form feed \u000C " },
+                { 'n', @"A new line \u000A " },
+                { 'e', @"An escape \u001B " },
+                { 'w', "Any word character " },
+                { 'W', "Any non-word character " },
+                { 's', "Any whitespace character " },
+                { 'S', "Any non-whitespace character " },
+                { 'd', "Any digit " },
+                { 'D', "Any non-digit " },
+                { 'A', "Anchor to start of string (ignore multiline)" },
+                { 'Z', "Anchor to end of string or before \\n (ignore multiline)" },
+                { 'z', "Anchor to end of string (ignore multiline)" }
+            };
 
             // character escapes
-            Escaped.Add('a', @"A bell (alarm) \u0007 ");
-            Escaped.Add('b', @"Word boundary between //w and //W");
-            Escaped.Add('B', @"Not at a word boundary between //w and //W");
-            Escaped.Add('t', @"A tab \u0009 ");
-            Escaped.Add('r', @"A carriage return \u000D ");
-            Escaped.Add('v', @"A vertical tab \u000B ");
-            Escaped.Add('f', @"A form feed \u000C ");
-            Escaped.Add('n', @"A new line \u000A ");
-            Escaped.Add('e', @"An escape \u001B ");
 
             // character classes
-            Escaped.Add('w', "Any word character ");
-            Escaped.Add('W', "Any non-word character ");
-            Escaped.Add('s', "Any whitespace character ");
-            Escaped.Add('S', "Any non-whitespace character ");
-            Escaped.Add('d', "Any digit ");
-            Escaped.Add('D', "Any non-digit ");
 
             // anchors
-            Escaped.Add('A', "Anchor to start of string (ignore multiline)");
-            Escaped.Add('Z', "Anchor to end of string or before \\n (ignore multiline)");
-            Escaped.Add('z', "Anchor to end of string (ignore multiline)");
         }
         
         /// <summary>
@@ -63,7 +65,7 @@ namespace RegularExpressionScratchpad
         {
             if (buffer == null)
             {
-                throw new ArgumentNullException("buffer", "RegexBuffer is null");
+                throw new ArgumentNullException(nameof(buffer), "RegexBuffer is null");
             }
 
             int startLoc = buffer.Offset;
@@ -140,13 +142,7 @@ namespace RegularExpressionScratchpad
         /// Gets a value indicating whether this <see cref="RegexCharacter"/> is special.
         /// </summary>
         /// <value><c>true</c> if special; otherwise, <c>false</c>.</value>
-        public bool Special
-        {
-            get
-            {
-                return this.special;
-            }
-        }
+        public bool Special => this.special;
 
         /// <summary>
         /// Toes the string.
@@ -234,7 +230,7 @@ namespace RegularExpressionScratchpad
             if (match.Success)
             {
                 this.special = true;
-                this.character = string.Format("Backreference to match: {0}", match.Groups["Name"]);
+                this.character = $"Backreference to match: {match.Groups["Name"]}";
                 buffer.Offset += match.Groups[0].Length;
                 return true;
             }

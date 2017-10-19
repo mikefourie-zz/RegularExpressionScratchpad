@@ -19,7 +19,7 @@ namespace RegularExpressionScratchpad
         {
             if (buffer == null)
             {
-                throw new ArgumentNullException("buffer", "RegexBuffer is null");
+                throw new ArgumentNullException(nameof(buffer), "RegexBuffer is null");
             }
 
             int startLoc = buffer.Offset;

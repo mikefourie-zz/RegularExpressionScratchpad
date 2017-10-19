@@ -14,7 +14,6 @@ namespace RegularExpressionScratchpad
     /// </summary>
     public partial class MainForm : Form
     {
-        private const string BlogUrl = "http://www.freetodev.com";
         private RegexBuffer buffer;
         private int regexInsertionPoint = -1;
         private DirectoryInfo dir;
@@ -127,7 +126,6 @@ namespace RegularExpressionScratchpad
             catch (Exception ex)
             {
                 this.ShowException(ex);
-                return;
             }
         }
 
@@ -195,7 +193,6 @@ namespace RegularExpressionScratchpad
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                return;
             }
         }
 
@@ -325,16 +322,6 @@ namespace RegularExpressionScratchpad
         }
 
         /// <summary>
-        /// Handles the TextChanged event of the textBoxInput control.
-        /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
-        private void TextBoxInput_TextChanged(object sender, EventArgs e)
-        {
-            this.toolStripStatusLabel1.Text = this.textBoxInput.Text.Length + " Characters";
-        }
-
-        /// <summary>
         /// Handles the Click event of the toolStripButton2 control.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
@@ -373,30 +360,18 @@ namespace RegularExpressionScratchpad
 
             if (taskCount > 0)
             {
-                this.toolStripProgressBar1.Maximum = taskCount;
-                this.toolStripProgressBar1.Visible = true;
-                this.toolStripStatusLabelAction.Visible = true;
                 foreach (TreeNode libraryNode in this.treeView1.Nodes)
                 {
                     foreach (TreeNode taskNode in libraryNode.Nodes)
                     {
                         if (taskNode.Checked)
                         {
-                            this.toolStripStatusLabelAction.Text = libraryNode.Text + " --- " + taskNode.Text;
-                            this.Refresh();
                             this.ProcessLibraryTask(libraryNode.Text, taskNode.Text);
-                            this.toolStripStatusLabel1.Text = this.textBoxInput.Text.Length + " Characters";
-                            this.toolStripProgressBar1.Value++;
                             this.Refresh();
                         }
                     }
                 }
             }
-
-            this.toolStripProgressBar1.Value = 0;
-            this.toolStripProgressBar1.Visible = false;
-            this.toolStripStatusLabelAction.Text = string.Empty;
-            this.toolStripStatusLabelAction.Visible = false;
         }
 
         /// <summary>
@@ -406,11 +381,11 @@ namespace RegularExpressionScratchpad
         /// <param name="task">The task.</param>
         private void ProcessLibraryTask(string library, string task)
         {
-            for (int i = 0; i < this.mylibrary.Library.Length; i++)
+            foreach (Library t1 in this.mylibrary.Library)
             {
-                if (this.mylibrary.Library[i].libraryname == library)
+                if (t1.libraryname == library)
                 {
-                    foreach (task t in this.mylibrary.Library[i].task)
+                    foreach (task t in t1.task)
                     {
                         if (t.name == task)
                         {
@@ -436,24 +411,6 @@ namespace RegularExpressionScratchpad
         }
 
         /// <summary>
-        /// Handles the Click event of the toolStripStatusLabel2 control.
-        /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
-        private void ToolStripStatusLabel2_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                System.Diagnostics.Process.Start(BlogUrl);
-            }
-            catch (Exception ex)
-            {
-                this.ShowException(ex);
-                return;
-            }
-        }
-
-        /// <summary>
         /// Handles the Click event of the toolStripButton3 control.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
@@ -472,12 +429,9 @@ namespace RegularExpressionScratchpad
         /// <param name="e">The <see cref="System.Windows.Forms.TreeViewEventArgs"/> instance containing the event data.</param>
         private void treeView1_AfterCheck(object sender, TreeViewEventArgs e)
         {
-            if (e.Node.Nodes != null)
+            foreach (TreeNode childNode in e.Node.Nodes)
             {
-                foreach (TreeNode childNode in e.Node.Nodes)
-                {
-                    childNode.Checked = e.Node.Checked;
-                }
+                childNode.Checked = e.Node.Checked;
             }
         }
 
@@ -514,7 +468,6 @@ namespace RegularExpressionScratchpad
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Unexpected Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
             }
         }
 
@@ -643,7 +596,6 @@ namespace RegularExpressionScratchpad
             catch (Exception ex)
             {
                 this.ShowException(ex);
-                return;
             }
         }
 

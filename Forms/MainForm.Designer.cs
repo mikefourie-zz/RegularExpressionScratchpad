@@ -120,11 +120,6 @@ namespace RegularExpressionScratchpad
             this.textBoxInput = new System.Windows.Forms.RichTextBox();
             this.textBoxInterpretation = new System.Windows.Forms.RichTextBox();
             this.textBoxReplacement = new System.Windows.Forms.RichTextBox();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
-            this.toolStripStatusLabelAction = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.labelLibrary = new System.Windows.Forms.Label();
             this.textBoxRegex = new System.Windows.Forms.RichTextBox();
@@ -134,17 +129,18 @@ namespace RegularExpressionScratchpad
             this.label2 = new System.Windows.Forms.Label();
             this.checkedListBoxOptions = new System.Windows.Forms.CheckedListBox();
             this.checkBoxTreatAsSingleString = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 124);
+            this.label3.Location = new System.Drawing.Point(7, 318);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 13);
+            this.label3.Size = new System.Drawing.Size(188, 26);
             this.label3.TabIndex = 5;
             this.label3.Text = "Replacement Text";
             // 
@@ -152,6 +148,7 @@ namespace RegularExpressionScratchpad
             // 
             this.toolStrip1.AutoSize = false;
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButtonInsert,
             this.toolStripSeparator1,
@@ -168,7 +165,7 @@ namespace RegularExpressionScratchpad
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.toolStrip1.Size = new System.Drawing.Size(992, 32);
+            this.toolStrip1.Size = new System.Drawing.Size(1188, 64);
             this.toolStrip1.Stretch = true;
             this.toolStrip1.TabIndex = 11;
             this.toolStrip1.Text = "toolStrip1";
@@ -189,7 +186,7 @@ namespace RegularExpressionScratchpad
             this.toolStripButtonInsert.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButtonInsert.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonInsert.Name = "toolStripButtonInsert";
-            this.toolStripButtonInsert.Size = new System.Drawing.Size(49, 29);
+            this.toolStripButtonInsert.Size = new System.Drawing.Size(96, 61);
             this.toolStripButtonInsert.Text = "Insert";
             // 
             // anchorsToolStripMenuItem
@@ -202,48 +199,48 @@ namespace RegularExpressionScratchpad
             this.wordBoundrybToolStripMenuItem,
             this.nonwordBoundryBToolStripMenuItem});
             this.anchorsToolStripMenuItem.Name = "anchorsToolStripMenuItem";
-            this.anchorsToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.anchorsToolStripMenuItem.Size = new System.Drawing.Size(319, 38);
             this.anchorsToolStripMenuItem.Text = "&Anchors";
             // 
             // beginningOfStringToolStripMenuItem
             // 
             this.beginningOfStringToolStripMenuItem.Name = "beginningOfStringToolStripMenuItem";
-            this.beginningOfStringToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.beginningOfStringToolStripMenuItem.Size = new System.Drawing.Size(389, 38);
             this.beginningOfStringToolStripMenuItem.Text = "Beginning of string: ^";
             this.beginningOfStringToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
             // beginningOfMultilineAToolStripMenuItem
             // 
             this.beginningOfMultilineAToolStripMenuItem.Name = "beginningOfMultilineAToolStripMenuItem";
-            this.beginningOfMultilineAToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.beginningOfMultilineAToolStripMenuItem.Size = new System.Drawing.Size(389, 38);
             this.beginningOfMultilineAToolStripMenuItem.Text = "Beginning of multiline: \\A";
             this.beginningOfMultilineAToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
             // endOfStringToolStripMenuItem
             // 
             this.endOfStringToolStripMenuItem.Name = "endOfStringToolStripMenuItem";
-            this.endOfStringToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.endOfStringToolStripMenuItem.Size = new System.Drawing.Size(389, 38);
             this.endOfStringToolStripMenuItem.Text = "End of string: $";
             this.endOfStringToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
             // endOfMultilineZToolStripMenuItem
             // 
             this.endOfMultilineZToolStripMenuItem.Name = "endOfMultilineZToolStripMenuItem";
-            this.endOfMultilineZToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.endOfMultilineZToolStripMenuItem.Size = new System.Drawing.Size(389, 38);
             this.endOfMultilineZToolStripMenuItem.Text = "End of multiline: \\Z";
             this.endOfMultilineZToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
             // wordBoundrybToolStripMenuItem
             // 
             this.wordBoundrybToolStripMenuItem.Name = "wordBoundrybToolStripMenuItem";
-            this.wordBoundrybToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.wordBoundrybToolStripMenuItem.Size = new System.Drawing.Size(389, 38);
             this.wordBoundrybToolStripMenuItem.Text = "Word boundry: \\b";
             this.wordBoundrybToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
             // nonwordBoundryBToolStripMenuItem
             // 
             this.nonwordBoundryBToolStripMenuItem.Name = "nonwordBoundryBToolStripMenuItem";
-            this.nonwordBoundryBToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.nonwordBoundryBToolStripMenuItem.Size = new System.Drawing.Size(389, 38);
             this.nonwordBoundryBToolStripMenuItem.Text = "Non-word boundry: \\B";
             this.nonwordBoundryBToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
@@ -253,20 +250,20 @@ namespace RegularExpressionScratchpad
             this.expressionexpyesnoToolStripMenuItem,
             this.namedToolStripMenuItem});
             this.conditionalsToolStripMenuItem.Name = "conditionalsToolStripMenuItem";
-            this.conditionalsToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.conditionalsToolStripMenuItem.Size = new System.Drawing.Size(319, 38);
             this.conditionalsToolStripMenuItem.Text = "Conditionals";
             // 
             // expressionexpyesnoToolStripMenuItem
             // 
             this.expressionexpyesnoToolStripMenuItem.Name = "expressionexpyesnoToolStripMenuItem";
-            this.expressionexpyesnoToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.expressionexpyesnoToolStripMenuItem.Size = new System.Drawing.Size(409, 38);
             this.expressionexpyesnoToolStripMenuItem.Text = "Expression: (?<exp>)yes|no)";
             this.expressionexpyesnoToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
             // namedToolStripMenuItem
             // 
             this.namedToolStripMenuItem.Name = "namedToolStripMenuItem";
-            this.namedToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.namedToolStripMenuItem.Size = new System.Drawing.Size(409, 38);
             this.namedToolStripMenuItem.Text = "Named: (?(<name>)yes|no)";
             this.namedToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
@@ -284,74 +281,74 @@ namespace RegularExpressionScratchpad
             this.decimalDigitdToolStripMenuItem,
             this.nondecimalDigitDToolStripMenuItem});
             this.characterClassesToolStripMenuItem.Name = "characterClassesToolStripMenuItem";
-            this.characterClassesToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.characterClassesToolStripMenuItem.Size = new System.Drawing.Size(319, 38);
             this.characterClassesToolStripMenuItem.Text = "Character classes";
             // 
             // groupcharsToolStripMenuItem
             // 
             this.groupcharsToolStripMenuItem.Name = "groupcharsToolStripMenuItem";
-            this.groupcharsToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.groupcharsToolStripMenuItem.Size = new System.Drawing.Size(406, 38);
             this.groupcharsToolStripMenuItem.Text = "Group: [<chars>]";
             this.groupcharsToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
             // negatedGroupcharsToolStripMenuItem
             // 
             this.negatedGroupcharsToolStripMenuItem.Name = "negatedGroupcharsToolStripMenuItem";
-            this.negatedGroupcharsToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.negatedGroupcharsToolStripMenuItem.Size = new System.Drawing.Size(406, 38);
             this.negatedGroupcharsToolStripMenuItem.Text = "Negated group: [^<chars>]";
             this.negatedGroupcharsToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(217, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(403, 6);
             // 
             // anyToolStripMenuItem
             // 
             this.anyToolStripMenuItem.Name = "anyToolStripMenuItem";
-            this.anyToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.anyToolStripMenuItem.Size = new System.Drawing.Size(406, 38);
             this.anyToolStripMenuItem.Text = "Any: .";
             this.anyToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
             // wordazAZ09wToolStripMenuItem
             // 
             this.wordazAZ09wToolStripMenuItem.Name = "wordazAZ09wToolStripMenuItem";
-            this.wordazAZ09wToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.wordazAZ09wToolStripMenuItem.Size = new System.Drawing.Size(406, 38);
             this.wordazAZ09wToolStripMenuItem.Text = "Word [a-zA-Z0-9]: \\w";
             this.wordazAZ09wToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
             // nonwordWToolStripMenuItem
             // 
             this.nonwordWToolStripMenuItem.Name = "nonwordWToolStripMenuItem";
-            this.nonwordWToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.nonwordWToolStripMenuItem.Size = new System.Drawing.Size(406, 38);
             this.nonwordWToolStripMenuItem.Text = "Non-word: \\W";
             this.nonwordWToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
             // whitespacefnrvsToolStripMenuItem
             // 
             this.whitespacefnrvsToolStripMenuItem.Name = "whitespacefnrvsToolStripMenuItem";
-            this.whitespacefnrvsToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.whitespacefnrvsToolStripMenuItem.Size = new System.Drawing.Size(406, 38);
             this.whitespacefnrvsToolStripMenuItem.Text = "Whitespace [\\f\\n\\r\\v]: \\s";
             this.whitespacefnrvsToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
             // nonwhitespaceSToolStripMenuItem
             // 
             this.nonwhitespaceSToolStripMenuItem.Name = "nonwhitespaceSToolStripMenuItem";
-            this.nonwhitespaceSToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.nonwhitespaceSToolStripMenuItem.Size = new System.Drawing.Size(406, 38);
             this.nonwhitespaceSToolStripMenuItem.Text = "Non-whitespace: \\S";
             this.nonwhitespaceSToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
             // decimalDigitdToolStripMenuItem
             // 
             this.decimalDigitdToolStripMenuItem.Name = "decimalDigitdToolStripMenuItem";
-            this.decimalDigitdToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.decimalDigitdToolStripMenuItem.Size = new System.Drawing.Size(406, 38);
             this.decimalDigitdToolStripMenuItem.Text = "Decimal digit: \\d";
             this.decimalDigitdToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
             // nondecimalDigitDToolStripMenuItem
             // 
             this.nondecimalDigitDToolStripMenuItem.Name = "nondecimalDigitDToolStripMenuItem";
-            this.nondecimalDigitDToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.nondecimalDigitDToolStripMenuItem.Size = new System.Drawing.Size(406, 38);
             this.nondecimalDigitDToolStripMenuItem.Text = "Non-decimal digit: \\D";
             this.nondecimalDigitDToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
@@ -369,76 +366,76 @@ namespace RegularExpressionScratchpad
             this.unicodeCharuxxxToolStripMenuItem,
             this.verticalTabZvToolStripMenuItem});
             this.characterShortcutsToolStripMenuItem.Name = "characterShortcutsToolStripMenuItem";
-            this.characterShortcutsToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.characterShortcutsToolStripMenuItem.Size = new System.Drawing.Size(319, 38);
             this.characterShortcutsToolStripMenuItem.Text = "Character shortcuts";
             // 
             // aSCIIValuexnnToolStripMenuItem
             // 
             this.aSCIIValuexnnToolStripMenuItem.Name = "aSCIIValuexnnToolStripMenuItem";
-            this.aSCIIValuexnnToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.aSCIIValuexnnToolStripMenuItem.Size = new System.Drawing.Size(354, 38);
             this.aSCIIValuexnnToolStripMenuItem.Text = "ASCII value: \\x<nn>";
             this.aSCIIValuexnnToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
             // bellaToolStripMenuItem
             // 
             this.bellaToolStripMenuItem.Name = "bellaToolStripMenuItem";
-            this.bellaToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.bellaToolStripMenuItem.Size = new System.Drawing.Size(354, 38);
             this.bellaToolStripMenuItem.Text = "Bell: \\a";
             this.bellaToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
             // carriageReturnrToolStripMenuItem
             // 
             this.carriageReturnrToolStripMenuItem.Name = "carriageReturnrToolStripMenuItem";
-            this.carriageReturnrToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.carriageReturnrToolStripMenuItem.Size = new System.Drawing.Size(354, 38);
             this.carriageReturnrToolStripMenuItem.Text = "Carriage return: \\r";
             this.carriageReturnrToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
             // cTRLCharCletterToolStripMenuItem
             // 
             this.cTRLCharCletterToolStripMenuItem.Name = "cTRLCharCletterToolStripMenuItem";
-            this.cTRLCharCletterToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.cTRLCharCletterToolStripMenuItem.Size = new System.Drawing.Size(354, 38);
             this.cTRLCharCletterToolStripMenuItem.Text = "CTRL char: \\C<letter>";
             this.cTRLCharCletterToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
             // escToolStripMenuItem
             // 
             this.escToolStripMenuItem.Name = "escToolStripMenuItem";
-            this.escToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.escToolStripMenuItem.Size = new System.Drawing.Size(354, 38);
             this.escToolStripMenuItem.Text = "Escape: \\e";
             this.escToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
             // formFeedfToolStripMenuItem
             // 
             this.formFeedfToolStripMenuItem.Name = "formFeedfToolStripMenuItem";
-            this.formFeedfToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.formFeedfToolStripMenuItem.Size = new System.Drawing.Size(354, 38);
             this.formFeedfToolStripMenuItem.Text = "Form feed: \\f";
             this.formFeedfToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
             // newlinnToolStripMenuItem
             // 
             this.newlinnToolStripMenuItem.Name = "newlinnToolStripMenuItem";
-            this.newlinnToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.newlinnToolStripMenuItem.Size = new System.Drawing.Size(354, 38);
             this.newlinnToolStripMenuItem.Text = "Newline: \\n";
             this.newlinnToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
             // tabtToolStripMenuItem
             // 
             this.tabtToolStripMenuItem.Name = "tabtToolStripMenuItem";
-            this.tabtToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.tabtToolStripMenuItem.Size = new System.Drawing.Size(354, 38);
             this.tabtToolStripMenuItem.Text = "Tab: \\t";
             this.tabtToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
             // unicodeCharuxxxToolStripMenuItem
             // 
             this.unicodeCharuxxxToolStripMenuItem.Name = "unicodeCharuxxxToolStripMenuItem";
-            this.unicodeCharuxxxToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.unicodeCharuxxxToolStripMenuItem.Size = new System.Drawing.Size(354, 38);
             this.unicodeCharuxxxToolStripMenuItem.Text = "Unicode char: \\u<xxx>";
             this.unicodeCharuxxxToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
             // verticalTabZvToolStripMenuItem
             // 
             this.verticalTabZvToolStripMenuItem.Name = "verticalTabZvToolStripMenuItem";
-            this.verticalTabZvToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.verticalTabZvToolStripMenuItem.Size = new System.Drawing.Size(354, 38);
             this.verticalTabZvToolStripMenuItem.Text = "Vertical tab: \\v";
             this.verticalTabZvToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
@@ -450,34 +447,34 @@ namespace RegularExpressionScratchpad
             this.noncpatureToolStripMenuItem,
             this.alternationxyToolStripMenuItem});
             this.groupingToolStripMenuItem.Name = "groupingToolStripMenuItem";
-            this.groupingToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.groupingToolStripMenuItem.Size = new System.Drawing.Size(319, 38);
             this.groupingToolStripMenuItem.Text = "Grouping";
             // 
             // captureexpToolStripMenuItem
             // 
             this.captureexpToolStripMenuItem.Name = "captureexpToolStripMenuItem";
-            this.captureexpToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
+            this.captureexpToolStripMenuItem.Size = new System.Drawing.Size(451, 38);
             this.captureexpToolStripMenuItem.Text = "Capture: (<exp>)";
             this.captureexpToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
             // namedCapturenamexToolStripMenuItem
             // 
             this.namedCapturenamexToolStripMenuItem.Name = "namedCapturenamexToolStripMenuItem";
-            this.namedCapturenamexToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
+            this.namedCapturenamexToolStripMenuItem.Size = new System.Drawing.Size(451, 38);
             this.namedCapturenamexToolStripMenuItem.Text = "Named capture: (?<<name>>x)";
             this.namedCapturenamexToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
             // noncpatureToolStripMenuItem
             // 
             this.noncpatureToolStripMenuItem.Name = "noncpatureToolStripMenuItem";
-            this.noncpatureToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
+            this.noncpatureToolStripMenuItem.Size = new System.Drawing.Size(451, 38);
             this.noncpatureToolStripMenuItem.Text = "Non-capture: (?:<exp>)";
             this.noncpatureToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
             // alternationxyToolStripMenuItem
             // 
             this.alternationxyToolStripMenuItem.Name = "alternationxyToolStripMenuItem";
-            this.alternationxyToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
+            this.alternationxyToolStripMenuItem.Size = new System.Drawing.Size(451, 38);
             this.alternationxyToolStripMenuItem.Text = "Alternation: (<x>|<y>)";
             this.alternationxyToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
@@ -495,76 +492,76 @@ namespace RegularExpressionScratchpad
             this.singlelinesToolStripMenuItem,
             this.singlelineOffsToolStripMenuItem});
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(319, 38);
             this.optionsToolStripMenuItem.Text = "Options";
             // 
             // ignoreCaseiToolStripMenuItem
             // 
             this.ignoreCaseiToolStripMenuItem.Name = "ignoreCaseiToolStripMenuItem";
-            this.ignoreCaseiToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.ignoreCaseiToolStripMenuItem.Size = new System.Drawing.Size(408, 38);
             this.ignoreCaseiToolStripMenuItem.Text = "Ignore case: (?i:)";
             this.ignoreCaseiToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
             // ignoreCaseOffiToolStripMenuItem
             // 
             this.ignoreCaseOffiToolStripMenuItem.Name = "ignoreCaseOffiToolStripMenuItem";
-            this.ignoreCaseOffiToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.ignoreCaseOffiToolStripMenuItem.Size = new System.Drawing.Size(408, 38);
             this.ignoreCaseOffiToolStripMenuItem.Text = "Ignore case off: (?-i:)";
             this.ignoreCaseOffiToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
             // ignoreWhitespacexToolStripMenuItem
             // 
             this.ignoreWhitespacexToolStripMenuItem.Name = "ignoreWhitespacexToolStripMenuItem";
-            this.ignoreWhitespacexToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.ignoreWhitespacexToolStripMenuItem.Size = new System.Drawing.Size(408, 38);
             this.ignoreWhitespacexToolStripMenuItem.Text = "Ignore whitespace: (?x:)";
             this.ignoreWhitespacexToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
             // ignoreWhitespaceOffxToolStripMenuItem
             // 
             this.ignoreWhitespaceOffxToolStripMenuItem.Name = "ignoreWhitespaceOffxToolStripMenuItem";
-            this.ignoreWhitespaceOffxToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.ignoreWhitespaceOffxToolStripMenuItem.Size = new System.Drawing.Size(408, 38);
             this.ignoreWhitespaceOffxToolStripMenuItem.Text = "Ignore whitespace off: (?-x:)";
             this.ignoreWhitespaceOffxToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
             // explicitCapturenToolStripMenuItem
             // 
             this.explicitCapturenToolStripMenuItem.Name = "explicitCapturenToolStripMenuItem";
-            this.explicitCapturenToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.explicitCapturenToolStripMenuItem.Size = new System.Drawing.Size(408, 38);
             this.explicitCapturenToolStripMenuItem.Text = "Explicit capture: (?n:)";
             this.explicitCapturenToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
             // explicitCaptureOffnToolStripMenuItem
             // 
             this.explicitCaptureOffnToolStripMenuItem.Name = "explicitCaptureOffnToolStripMenuItem";
-            this.explicitCaptureOffnToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.explicitCaptureOffnToolStripMenuItem.Size = new System.Drawing.Size(408, 38);
             this.explicitCaptureOffnToolStripMenuItem.Text = "Explicit capture off: (?-n:)";
             this.explicitCaptureOffnToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
             // multilinemToolStripMenuItem
             // 
             this.multilinemToolStripMenuItem.Name = "multilinemToolStripMenuItem";
-            this.multilinemToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.multilinemToolStripMenuItem.Size = new System.Drawing.Size(408, 38);
             this.multilinemToolStripMenuItem.Text = "Multiline: (?m:)";
             this.multilinemToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
             // multilineOffmToolStripMenuItem
             // 
             this.multilineOffmToolStripMenuItem.Name = "multilineOffmToolStripMenuItem";
-            this.multilineOffmToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.multilineOffmToolStripMenuItem.Size = new System.Drawing.Size(408, 38);
             this.multilineOffmToolStripMenuItem.Text = "Multiline off: (?-m:)";
             this.multilineOffmToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
             // singlelinesToolStripMenuItem
             // 
             this.singlelinesToolStripMenuItem.Name = "singlelinesToolStripMenuItem";
-            this.singlelinesToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.singlelinesToolStripMenuItem.Size = new System.Drawing.Size(408, 38);
             this.singlelinesToolStripMenuItem.Text = "Singleline: (?s:)";
             this.singlelinesToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
             // singlelineOffsToolStripMenuItem
             // 
             this.singlelineOffsToolStripMenuItem.Name = "singlelineOffsToolStripMenuItem";
-            this.singlelineOffsToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.singlelineOffsToolStripMenuItem.Size = new System.Drawing.Size(408, 38);
             this.singlelineOffsToolStripMenuItem.Text = "Singleline off: (?-s:)";
             this.singlelineOffsToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
@@ -585,95 +582,95 @@ namespace RegularExpressionScratchpad
             this.zeroOrMoreNonGreedyToolStripMenuItem,
             this.zeroOrOneNonGreedyToolStripMenuItem});
             this.quantifiersToolStripMenuItem.Name = "quantifiersToolStripMenuItem";
-            this.quantifiersToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.quantifiersToolStripMenuItem.Size = new System.Drawing.Size(319, 38);
             this.quantifiersToolStripMenuItem.Text = "Quantifiers";
             // 
             // atLeastNnToolStripMenuItem
             // 
             this.atLeastNnToolStripMenuItem.Name = "atLeastNnToolStripMenuItem";
-            this.atLeastNnToolStripMenuItem.Size = new System.Drawing.Size(278, 22);
+            this.atLeastNnToolStripMenuItem.Size = new System.Drawing.Size(525, 38);
             this.atLeastNnToolStripMenuItem.Text = "At least n: {<n>,}";
             this.atLeastNnToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
             // exactlyNnToolStripMenuItem
             // 
             this.exactlyNnToolStripMenuItem.Name = "exactlyNnToolStripMenuItem";
-            this.exactlyNnToolStripMenuItem.Size = new System.Drawing.Size(278, 22);
+            this.exactlyNnToolStripMenuItem.Size = new System.Drawing.Size(525, 38);
             this.exactlyNnToolStripMenuItem.Text = "Exactly n: {<n>}";
             this.exactlyNnToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
             // oneOrMoreToolStripMenuItem
             // 
             this.oneOrMoreToolStripMenuItem.Name = "oneOrMoreToolStripMenuItem";
-            this.oneOrMoreToolStripMenuItem.Size = new System.Drawing.Size(278, 22);
+            this.oneOrMoreToolStripMenuItem.Size = new System.Drawing.Size(525, 38);
             this.oneOrMoreToolStripMenuItem.Text = "One or more: +";
             this.oneOrMoreToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
             // fromNToMnmToolStripMenuItem
             // 
             this.fromNToMnmToolStripMenuItem.Name = "fromNToMnmToolStripMenuItem";
-            this.fromNToMnmToolStripMenuItem.Size = new System.Drawing.Size(278, 22);
+            this.fromNToMnmToolStripMenuItem.Size = new System.Drawing.Size(525, 38);
             this.fromNToMnmToolStripMenuItem.Text = "From n to m: {<n>, <m>}";
             this.fromNToMnmToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
             // zeroOrMoreToolStripMenuItem
             // 
             this.zeroOrMoreToolStripMenuItem.Name = "zeroOrMoreToolStripMenuItem";
-            this.zeroOrMoreToolStripMenuItem.Size = new System.Drawing.Size(278, 22);
+            this.zeroOrMoreToolStripMenuItem.Size = new System.Drawing.Size(525, 38);
             this.zeroOrMoreToolStripMenuItem.Text = "Zero or more: *";
             this.zeroOrMoreToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
             // zeroOrOneToolStripMenuItem
             // 
             this.zeroOrOneToolStripMenuItem.Name = "zeroOrOneToolStripMenuItem";
-            this.zeroOrOneToolStripMenuItem.Size = new System.Drawing.Size(278, 22);
+            this.zeroOrOneToolStripMenuItem.Size = new System.Drawing.Size(525, 38);
             this.zeroOrOneToolStripMenuItem.Text = "Zero or one: ?";
             this.zeroOrOneToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(275, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(522, 6);
             // 
             // atLeastNNongreedynToolStripMenuItem
             // 
             this.atLeastNNongreedynToolStripMenuItem.Name = "atLeastNNongreedynToolStripMenuItem";
-            this.atLeastNNongreedynToolStripMenuItem.Size = new System.Drawing.Size(278, 22);
+            this.atLeastNNongreedynToolStripMenuItem.Size = new System.Drawing.Size(525, 38);
             this.atLeastNNongreedynToolStripMenuItem.Text = "At least n non-greedy: {<n>}?";
             this.atLeastNNongreedynToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
             // exacltyNNongreedynToolStripMenuItem
             // 
             this.exacltyNNongreedynToolStripMenuItem.Name = "exacltyNNongreedynToolStripMenuItem";
-            this.exacltyNNongreedynToolStripMenuItem.Size = new System.Drawing.Size(278, 22);
+            this.exacltyNNongreedynToolStripMenuItem.Size = new System.Drawing.Size(525, 38);
             this.exacltyNNongreedynToolStripMenuItem.Text = "Exactly n non-greedy: {<n>}?";
             this.exacltyNNongreedynToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
             // oneOrMoreNonGreedyToolStripMenuItem
             // 
             this.oneOrMoreNonGreedyToolStripMenuItem.Name = "oneOrMoreNonGreedyToolStripMenuItem";
-            this.oneOrMoreNonGreedyToolStripMenuItem.Size = new System.Drawing.Size(278, 22);
+            this.oneOrMoreNonGreedyToolStripMenuItem.Size = new System.Drawing.Size(525, 38);
             this.oneOrMoreNonGreedyToolStripMenuItem.Text = "One or more non greedy: +?";
             this.oneOrMoreNonGreedyToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
             // fromNToMNonGreedynmToolStripMenuItem
             // 
             this.fromNToMNonGreedynmToolStripMenuItem.Name = "fromNToMNonGreedynmToolStripMenuItem";
-            this.fromNToMNonGreedynmToolStripMenuItem.Size = new System.Drawing.Size(278, 22);
+            this.fromNToMNonGreedynmToolStripMenuItem.Size = new System.Drawing.Size(525, 38);
             this.fromNToMNonGreedynmToolStripMenuItem.Text = "From n to m non greedy: {<n>, <m>}?";
             this.fromNToMNonGreedynmToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
             // zeroOrMoreNonGreedyToolStripMenuItem
             // 
             this.zeroOrMoreNonGreedyToolStripMenuItem.Name = "zeroOrMoreNonGreedyToolStripMenuItem";
-            this.zeroOrMoreNonGreedyToolStripMenuItem.Size = new System.Drawing.Size(278, 22);
+            this.zeroOrMoreNonGreedyToolStripMenuItem.Size = new System.Drawing.Size(525, 38);
             this.zeroOrMoreNonGreedyToolStripMenuItem.Text = "Zero or more non greedy: *?";
             this.zeroOrMoreNonGreedyToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
             // zeroOrOneNonGreedyToolStripMenuItem
             // 
             this.zeroOrOneNonGreedyToolStripMenuItem.Name = "zeroOrOneNonGreedyToolStripMenuItem";
-            this.zeroOrOneNonGreedyToolStripMenuItem.Size = new System.Drawing.Size(278, 22);
+            this.zeroOrOneNonGreedyToolStripMenuItem.Size = new System.Drawing.Size(525, 38);
             this.zeroOrOneNonGreedyToolStripMenuItem.Text = "Zero or one non greedy: ??";
             this.zeroOrOneNonGreedyToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
@@ -685,34 +682,34 @@ namespace RegularExpressionScratchpad
             this.positiveLookaheadxToolStripMenuItem,
             this.positiveLookbehindToolStripMenuItem});
             this.zerowidthToolStripMenuItem.Name = "zerowidthToolStripMenuItem";
-            this.zerowidthToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.zerowidthToolStripMenuItem.Size = new System.Drawing.Size(319, 38);
             this.zerowidthToolStripMenuItem.Text = "Zero-width";
             // 
             // negativeLookaheadxToolStripMenuItem
             // 
             this.negativeLookaheadxToolStripMenuItem.Name = "negativeLookaheadxToolStripMenuItem";
-            this.negativeLookaheadxToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
+            this.negativeLookaheadxToolStripMenuItem.Size = new System.Drawing.Size(441, 38);
             this.negativeLookaheadxToolStripMenuItem.Text = "Negative lookahead: (?!<x>)";
             this.negativeLookaheadxToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
             // negativeLookbehindxToolStripMenuItem
             // 
             this.negativeLookbehindxToolStripMenuItem.Name = "negativeLookbehindxToolStripMenuItem";
-            this.negativeLookbehindxToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
+            this.negativeLookbehindxToolStripMenuItem.Size = new System.Drawing.Size(441, 38);
             this.negativeLookbehindxToolStripMenuItem.Text = "Negative lookbehind: (?<!<x>)";
             this.negativeLookbehindxToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
             // positiveLookaheadxToolStripMenuItem
             // 
             this.positiveLookaheadxToolStripMenuItem.Name = "positiveLookaheadxToolStripMenuItem";
-            this.positiveLookaheadxToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
+            this.positiveLookaheadxToolStripMenuItem.Size = new System.Drawing.Size(441, 38);
             this.positiveLookaheadxToolStripMenuItem.Text = "Positive lookahead: (?=<x>)";
             this.positiveLookaheadxToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
             // positiveLookbehindToolStripMenuItem
             // 
             this.positiveLookbehindToolStripMenuItem.Name = "positiveLookbehindToolStripMenuItem";
-            this.positiveLookbehindToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
+            this.positiveLookbehindToolStripMenuItem.Size = new System.Drawing.Size(441, 38);
             this.positiveLookbehindToolStripMenuItem.Text = "Positive lookbehind: (?<=<x>)";
             this.positiveLookbehindToolStripMenuItem.Click += new System.EventHandler(this.InsertText);
             // 
@@ -727,7 +724,7 @@ namespace RegularExpressionScratchpad
             this.toolStripMatch.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripMatch.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripMatch.Name = "toolStripMatch";
-            this.toolStripMatch.Size = new System.Drawing.Size(69, 29);
+            this.toolStripMatch.Size = new System.Drawing.Size(110, 29);
             this.toolStripMatch.Text = "Match";
             this.toolStripMatch.Click += new System.EventHandler(this.toolStripMatch_Click);
             // 
@@ -737,7 +734,7 @@ namespace RegularExpressionScratchpad
             this.toolStripButtonReplace.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButtonReplace.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonReplace.Name = "toolStripButtonReplace";
-            this.toolStripButtonReplace.Size = new System.Drawing.Size(76, 29);
+            this.toolStripButtonReplace.Size = new System.Drawing.Size(125, 29);
             this.toolStripButtonReplace.Text = "Replace";
             this.toolStripButtonReplace.ToolTipText = "Replace";
             this.toolStripButtonReplace.Click += new System.EventHandler(this.ToolStripButtonReplace_Click);
@@ -748,7 +745,7 @@ namespace RegularExpressionScratchpad
             this.toolStripButtonReplaceInFiles.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButtonReplaceInFiles.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonReplaceInFiles.Name = "toolStripButtonReplaceInFiles";
-            this.toolStripButtonReplaceInFiles.Size = new System.Drawing.Size(115, 29);
+            this.toolStripButtonReplaceInFiles.Size = new System.Drawing.Size(206, 29);
             this.toolStripButtonReplaceInFiles.Text = "Replace In Files";
             this.toolStripButtonReplaceInFiles.Click += new System.EventHandler(this.toolStripButtonReplaceInFiles_Click);
             // 
@@ -763,7 +760,7 @@ namespace RegularExpressionScratchpad
             this.toolStripButtonLibrary.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButtonLibrary.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonLibrary.Name = "toolStripButtonLibrary";
-            this.toolStripButtonLibrary.Size = new System.Drawing.Size(71, 29);
+            this.toolStripButtonLibrary.Size = new System.Drawing.Size(114, 29);
             this.toolStripButtonLibrary.Text = "Library";
             this.toolStripButtonLibrary.Click += new System.EventHandler(this.ToolStripButton3_Click);
             // 
@@ -773,7 +770,7 @@ namespace RegularExpressionScratchpad
             this.toolStripButton2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(107, 29);
+            this.toolStripButton2.Size = new System.Drawing.Size(190, 29);
             this.toolStripButton2.Text = "Run Selection";
             this.toolStripButton2.Click += new System.EventHandler(this.ToolStripButton2_Click);
             // 
@@ -788,7 +785,7 @@ namespace RegularExpressionScratchpad
             this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(79, 29);
+            this.toolStripButton1.Size = new System.Drawing.Size(131, 29);
             this.toolStripButton1.Text = "&Matcher";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
@@ -819,26 +816,25 @@ namespace RegularExpressionScratchpad
             this.textBoxInput.BackColor = System.Drawing.Color.White;
             this.textBoxInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxInput.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxInput.Location = new System.Drawing.Point(12, 244);
+            this.textBoxInput.Location = new System.Drawing.Point(12, 526);
             this.textBoxInput.MaxLength = 500000;
             this.textBoxInput.Name = "textBoxInput";
-            this.textBoxInput.Size = new System.Drawing.Size(720, 195);
+            this.textBoxInput.Size = new System.Drawing.Size(698, 120);
             this.textBoxInput.TabIndex = 2;
             this.textBoxInput.Text = "";
             this.toolTip1.SetToolTip(this.textBoxInput, "Input Text / Result");
             this.textBoxInput.DragDrop += new System.Windows.Forms.DragEventHandler(this.TextBoxInput_dragdrop);
             this.textBoxInput.DragEnter += new System.Windows.Forms.DragEventHandler(this.TextBoxInput_DragEnter);
-            this.textBoxInput.TextChanged += new System.EventHandler(this.TextBoxInput_TextChanged);
             // 
             // textBoxInterpretation
             // 
             this.textBoxInterpretation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxInterpretation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.textBoxInterpretation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.textBoxInterpretation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxInterpretation.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxInterpretation.Location = new System.Drawing.Point(741, 56);
+            this.textBoxInterpretation.Location = new System.Drawing.Point(731, 141);
             this.textBoxInterpretation.Name = "textBoxInterpretation";
-            this.textBoxInterpretation.Size = new System.Drawing.Size(234, 160);
+            this.textBoxInterpretation.Size = new System.Drawing.Size(437, 332);
             this.textBoxInterpretation.TabIndex = 14;
             this.textBoxInterpretation.TabStop = false;
             this.textBoxInterpretation.Text = "";
@@ -849,62 +845,22 @@ namespace RegularExpressionScratchpad
             this.textBoxReplacement.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxReplacement.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxReplacement.Location = new System.Drawing.Point(12, 140);
+            this.textBoxReplacement.Location = new System.Drawing.Point(12, 347);
             this.textBoxReplacement.MaxLength = 500000;
             this.textBoxReplacement.Name = "textBoxReplacement";
-            this.textBoxReplacement.Size = new System.Drawing.Size(720, 76);
+            this.textBoxReplacement.Size = new System.Drawing.Size(698, 126);
             this.textBoxReplacement.TabIndex = 1;
             this.textBoxReplacement.Text = "";
             this.toolTip1.SetToolTip(this.textBoxReplacement, "Replacement Text");
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1,
-            this.toolStripProgressBar1,
-            this.toolStripStatusLabelAction,
-            this.toolStripStatusLabel2});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 451);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(992, 22);
-            this.statusStrip1.TabIndex = 22;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
-            // 
-            // toolStripProgressBar1
-            // 
-            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
-            this.toolStripProgressBar1.Size = new System.Drawing.Size(200, 16);
-            this.toolStripProgressBar1.Step = 1;
-            this.toolStripProgressBar1.Visible = false;
-            // 
-            // toolStripStatusLabelAction
-            // 
-            this.toolStripStatusLabelAction.Name = "toolStripStatusLabelAction";
-            this.toolStripStatusLabelAction.Size = new System.Drawing.Size(0, 17);
-            // 
-            // toolStripStatusLabel2
-            // 
-            this.toolStripStatusLabel2.IsLink = true;
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(104, 17);
-            this.toolStripStatusLabel2.Text = "Mike Fourie\'s Blog";
-            this.toolStripStatusLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.toolStripStatusLabel2.ToolTipText = "www.freetodev.com";
-            this.toolStripStatusLabel2.Click += new System.EventHandler(this.ToolStripStatusLabel2_Click);
             // 
             // treeView1
             // 
             this.treeView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.treeView1.CheckBoxes = true;
-            this.treeView1.Location = new System.Drawing.Point(741, 244);
+            this.treeView1.Location = new System.Drawing.Point(731, 526);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(234, 195);
+            this.treeView1.Size = new System.Drawing.Size(437, 120);
             this.treeView1.TabIndex = 3;
             this.treeView1.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterCheck);
             // 
@@ -913,9 +869,9 @@ namespace RegularExpressionScratchpad
             this.labelLibrary.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelLibrary.AutoSize = true;
             this.labelLibrary.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLibrary.Location = new System.Drawing.Point(738, 228);
+            this.labelLibrary.Location = new System.Drawing.Point(726, 497);
             this.labelLibrary.Name = "labelLibrary";
-            this.labelLibrary.Size = new System.Drawing.Size(65, 13);
+            this.labelLibrary.Size = new System.Drawing.Size(130, 26);
             this.labelLibrary.TabIndex = 27;
             this.labelLibrary.Text = "Task Library";
             // 
@@ -924,10 +880,10 @@ namespace RegularExpressionScratchpad
             this.textBoxRegex.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxRegex.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxRegex.Location = new System.Drawing.Point(12, 56);
+            this.textBoxRegex.Location = new System.Drawing.Point(12, 141);
             this.textBoxRegex.MaxLength = 500;
             this.textBoxRegex.Name = "textBoxRegex";
-            this.textBoxRegex.Size = new System.Drawing.Size(720, 55);
+            this.textBoxRegex.Size = new System.Drawing.Size(698, 152);
             this.textBoxRegex.TabIndex = 0;
             this.textBoxRegex.Text = "";
             this.toolTip1.SetToolTip(this.textBoxRegex, "Regular Expression");
@@ -938,9 +894,9 @@ namespace RegularExpressionScratchpad
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 228);
+            this.label4.Location = new System.Drawing.Point(7, 497);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 13);
+            this.label4.Size = new System.Drawing.Size(152, 26);
             this.label4.TabIndex = 29;
             this.label4.Text = "Text to Search";
             this.toolTip1.SetToolTip(this.label4, "Text to Search");
@@ -950,14 +906,16 @@ namespace RegularExpressionScratchpad
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(738, 36);
+            this.label2.Location = new System.Drawing.Point(835, 112);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 13);
+            this.label2.Size = new System.Drawing.Size(139, 26);
             this.label2.TabIndex = 28;
             this.label2.Text = "Interpretation";
             // 
             // checkedListBoxOptions
             // 
+            this.checkedListBoxOptions.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.checkedListBoxOptions.BackColor = System.Drawing.SystemColors.Control;
             this.checkedListBoxOptions.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.checkedListBoxOptions.CheckOnClick = true;
@@ -970,36 +928,59 @@ namespace RegularExpressionScratchpad
             "Multiline",
             "Singleline",
             "Right to left"});
-            this.checkedListBoxOptions.Location = new System.Drawing.Point(12, 35);
+            this.checkedListBoxOptions.Location = new System.Drawing.Point(12, 67);
             this.checkedListBoxOptions.MultiColumn = true;
             this.checkedListBoxOptions.Name = "checkedListBoxOptions";
-            this.checkedListBoxOptions.Size = new System.Drawing.Size(722, 15);
+            this.checkedListBoxOptions.Size = new System.Drawing.Size(1164, 27);
             this.checkedListBoxOptions.TabIndex = 32;
             // 
             // checkBoxTreatAsSingleString
             // 
             this.checkBoxTreatAsSingleString.AutoSize = true;
             this.checkBoxTreatAsSingleString.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.checkBoxTreatAsSingleString.Location = new System.Drawing.Point(95, 226);
+            this.checkBoxTreatAsSingleString.Location = new System.Drawing.Point(203, 495);
             this.checkBoxTreatAsSingleString.Name = "checkBoxTreatAsSingleString";
-            this.checkBoxTreatAsSingleString.Size = new System.Drawing.Size(121, 17);
+            this.checkBoxTreatAsSingleString.Size = new System.Drawing.Size(240, 30);
             this.checkBoxTreatAsSingleString.TabIndex = 33;
             this.checkBoxTreatAsSingleString.Text = "Treat as single string";
             this.checkBoxTreatAsSingleString.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label1.Location = new System.Drawing.Point(12, 112);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(202, 26);
+            this.label1.TabIndex = 34;
+            this.label1.Text = "Regular Expression";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(726, 112);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(139, 26);
+            this.label5.TabIndex = 28;
+            this.label5.Text = "Interpretation";
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(992, 473);
+            this.ClientSize = new System.Drawing.Size(1188, 748);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.checkedListBoxOptions);
             this.Controls.Add(this.label4);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxRegex);
             this.Controls.Add(this.labelLibrary);
             this.Controls.Add(this.treeView1);
-            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.textBoxReplacement);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBoxInterpretation);
@@ -1011,13 +992,11 @@ namespace RegularExpressionScratchpad
             this.MinimumSize = new System.Drawing.Size(1000, 500);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Regular Expression Scratchpad 3.0";
+            this.Text = "Regular Expression Scratchpad 3.1";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResizeEnd += new System.EventHandler(this.MainForm_ResizeEnd);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1099,10 +1078,7 @@ namespace RegularExpressionScratchpad
         private System.Windows.Forms.ToolStripMenuItem negativeLookbehindxToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem positiveLookaheadxToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem positiveLookbehindToolStripMenuItem;
-        private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         private System.Windows.Forms.ToolStripButton toolStripButtonLibrary;
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.Label labelLibrary;
@@ -1116,13 +1092,13 @@ namespace RegularExpressionScratchpad
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelAction;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton toolStripMatch;
         private System.Windows.Forms.CheckedListBox checkedListBoxOptions;
         private System.Windows.Forms.CheckBox checkBoxTreatAsSingleString;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label5;
     }
 }
 

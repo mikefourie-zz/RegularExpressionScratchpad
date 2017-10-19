@@ -37,7 +37,7 @@ namespace RegularExpressionScratchpad
         /// <param name="e">The <see cref="System.Windows.Forms.LinkLabelLinkClickedEventArgs"/> instance containing the event data.</param>
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start("http://www.freetodev.com");
+            Process.Start("https://mikefourie.wordpress.com/");
             this.Close();
         }
 

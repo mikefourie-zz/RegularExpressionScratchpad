@@ -39,7 +39,7 @@ namespace RegularExpressionScratchpad
         {
             if (buffer == null)
             {
-                throw new ArgumentNullException("buffer", "RegexBuffer is null");
+                throw new ArgumentNullException(nameof(buffer), "RegexBuffer is null");
             }
 
             this.startLocation = buffer.Offset;
@@ -89,7 +89,7 @@ namespace RegularExpressionScratchpad
                 // plain old capture...
                 if (!this.HandlePlainOldCapture(buffer))
                 {
-                    throw new Exception(string.Format("Unrecognized capture: {0}", buffer.String));
+                    throw new Exception($"Unrecognized capture: {buffer.String}");
                 }
             }
 
@@ -134,12 +134,12 @@ namespace RegularExpressionScratchpad
                 buffer.ErrorLocation = this.startLocation;
                 buffer.ErrorLength = 1;
                 throw new Exception(
-                    string.Format("Missing closing ')' in capture"), e);
+                    "Missing closing \')\' in capture", e);
             }
 
             if (current != ')')
             {
-                throw new Exception(string.Format("Unterminated closure at offset {0}", buffer.Offset));
+                throw new Exception($"Unterminated closure at offset {buffer.Offset}");
             }
 
             buffer.Offset++; // eat closing parenthesis
@@ -157,7 +157,7 @@ namespace RegularExpressionScratchpad
                 // we're done
             if (buffer.ExplicitCapture)
             {
-                this.description = string.Format("Non-capturing Group");
+                this.description = "Non-capturing Group";
             }
 
             this.expression = new RegexExpression(buffer);
@@ -186,7 +186,7 @@ namespace RegularExpressionScratchpad
             Match match = regex.Match(buffer.String);
             if (match.Success)
             {
-                this.description = string.Format("Capture to <{0}>", match.Groups["Name"]);
+                this.description = $"Capture to <{match.Groups["Name"]}>";
                 
                     // advance buffer to the rest of the expression
                 buffer.Offset += match.Groups["Rest"].Index;
@@ -217,7 +217,7 @@ namespace RegularExpressionScratchpad
             Match match = regex.Match(buffer.String);
             if (match.Success)
             {
-                this.description = string.Format("Non-capturing Group");
+                this.description = "Non-capturing Group";
 
                 buffer.Offset += match.Groups["Rest"].Index;
                 this.expression = new RegexExpression(buffer);
@@ -253,7 +253,7 @@ namespace RegularExpressionScratchpad
             Match match = regex.Match(buffer.String);
             if (match.Success)
             {
-                this.description = string.Format("Balancing Group <{0}>-<{1}>", match.Groups["Name1"], match.Groups["Name2"]);
+                this.description = $"Balancing Group <{match.Groups["Name1"]}>-<{match.Groups["Name2"]}>";
                 buffer.Offset += match.Groups["Rest"].Index;
                 this.expression = new RegexExpression(buffer);
                 this.CheckClosingParen(buffer);
@@ -282,7 +282,7 @@ namespace RegularExpressionScratchpad
             if (match.Success)
             {
                 string option = match.Groups["Options"].Value;
-                this.description = string.Format("Set options to {0}", OptionNames[option]);
+                this.description = $"Set options to {OptionNames[option]}";
                 this.expression = null;
                 buffer.Offset += match.Groups[0].Length;
                 return true;
@@ -351,7 +351,7 @@ namespace RegularExpressionScratchpad
             Match match = regex.Match(buffer.String);
             if (match.Success)
             {
-                this.description = string.Format("Non-backtracking subexpression");
+                this.description = "Non-backtracking subexpression";
 
                 buffer.Offset += match.Groups["Rest"].Index;
                 this.expression = new RegexExpression(buffer);
@@ -367,8 +367,7 @@ namespace RegularExpressionScratchpad
         /// Checks the conditional.
         /// </summary>
         /// <param name="buffer">The buffer.</param>
-        /// <returns>bool</returns>
-        private bool CheckConditional(RegexBuffer buffer)
+        private void CheckConditional(RegexBuffer buffer)
         {
             // Look for conditional (?(name)yesmatch|nomatch)
             // (name can also be an expression)
@@ -382,14 +381,11 @@ namespace RegularExpressionScratchpad
             Match match = regex.Match(buffer.String);
             if (match.Success)
             {
-                this.description = string.Format("Conditional Subexpression");
+                this.description = "Conditional Subexpression";
 
                 buffer.Offset += match.Groups["Rest"].Index;
                 this.expression = new RegexConditional(buffer);
-                return true;
             }
-
-            return false;
         }
     }
 }
