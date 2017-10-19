@@ -126,7 +126,6 @@ namespace RegularExpressionScratchpad
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.label4 = new System.Windows.Forms.Label();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.label2 = new System.Windows.Forms.Label();
             this.checkedListBoxOptions = new System.Windows.Forms.CheckedListBox();
             this.checkBoxTreatAsSingleString = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -901,17 +900,6 @@ namespace RegularExpressionScratchpad
             this.label4.Text = "Text to Search";
             this.toolTip1.SetToolTip(this.label4, "Text to Search");
             // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(835, 112);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(139, 26);
-            this.label2.TabIndex = 28;
-            this.label2.Text = "Interpretation";
-            // 
             // checkedListBoxOptions
             // 
             this.checkedListBoxOptions.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -938,7 +926,7 @@ namespace RegularExpressionScratchpad
             // 
             this.checkBoxTreatAsSingleString.AutoSize = true;
             this.checkBoxTreatAsSingleString.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.checkBoxTreatAsSingleString.Location = new System.Drawing.Point(203, 495);
+            this.checkBoxTreatAsSingleString.Location = new System.Drawing.Point(203, 494);
             this.checkBoxTreatAsSingleString.Name = "checkBoxTreatAsSingleString";
             this.checkBoxTreatAsSingleString.Size = new System.Drawing.Size(240, 30);
             this.checkBoxTreatAsSingleString.TabIndex = 33;
@@ -977,7 +965,6 @@ namespace RegularExpressionScratchpad
             this.Controls.Add(this.checkedListBoxOptions);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxRegex);
             this.Controls.Add(this.labelLibrary);
             this.Controls.Add(this.treeView1);
@@ -1090,7 +1077,6 @@ namespace RegularExpressionScratchpad
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.ToolStripButton toolStripButtonReplaceInFiles;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
